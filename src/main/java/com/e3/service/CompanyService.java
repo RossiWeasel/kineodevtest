@@ -1,7 +1,7 @@
 package com.e3.service;
 
-import com.e3.model.Company;
-import com.e3.model.Employee;
+import com.e3.entity.Company;
+import com.e3.entity.Employee;
 import com.e3.repository.ICompanyRepository;
 import com.e3.repository.IEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

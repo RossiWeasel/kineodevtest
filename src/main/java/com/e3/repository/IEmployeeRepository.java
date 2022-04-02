@@ -1,6 +1,6 @@
 package com.e3.repository;
 
-import com.e3.model.Employee;
+import com.e3.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

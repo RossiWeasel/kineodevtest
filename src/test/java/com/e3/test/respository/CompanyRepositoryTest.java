@@ -1,7 +1,7 @@
 package com.e3.test.respository;
 
-import com.e3.model.Company;
-import com.e3.model.Employee;
+import com.e3.entity.Company;
+import com.e3.entity.Employee;
 import com.e3.repository.ICompanyRepository;
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,14 +11,8 @@ import org.springframework.boot.autoconfigure.jdbc.EmbeddedDatabaseConnection;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @RunWith(SpringRunner.class)

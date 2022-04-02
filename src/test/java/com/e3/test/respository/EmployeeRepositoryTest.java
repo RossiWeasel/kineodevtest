@@ -1,7 +1,7 @@
 package com.e3.test.respository;
 
-import com.e3.model.Company;
-import com.e3.model.Employee;
+import com.e3.entity.Company;
+import com.e3.entity.Employee;
 import com.e3.repository.IEmployeeRepository;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -80,5 +81,19 @@ public class EmployeeRepositoryTest {
         Assert.assertEquals(2, foundEmployees.size());
         Assert.assertEquals("Huy", foundEmployees.get(0).getFirstName());
         Assert.assertEquals("Michael", foundEmployees.get(1).getFirstName());
+    }
+
+    @Test(expected = ConstraintViolationException.class)
+    public void whenCreateInvalidEmployee_thenThrowsException() {
+        // initialize
+        Company company = new Company();
+        company.setName("Kineo");
+        Company savedCompany = entityManager.persist(company);
+
+        Employee firstEmployee = new Employee();
+        firstEmployee.setFirstName("Huy???");
+        firstEmployee.setLastName("Nguyen");
+        firstEmployee.setCompany(savedCompany);
+        employeeRepository.save(firstEmployee);
     }
 }

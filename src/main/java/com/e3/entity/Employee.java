@@ -1,4 +1,4 @@
-package com.e3.model;
+package com.e3.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

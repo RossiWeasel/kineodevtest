@@ -1,7 +1,6 @@
 package com.e3.controller;
 
-import com.e3.model.Company;
-import com.e3.repository.ICompanyRepository;
+import com.e3.entity.Company;
 import com.e3.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
