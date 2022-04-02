@@ -47,7 +47,7 @@ public class EmployeeRepositoryTest {
         entityManager.flush();
 
         // when
-        List<Employee> foundEmployees = employeeRepository.findEmployeeByName("uy");
+        List<Employee> foundEmployees = employeeRepository.findEmployee("uy");
 
         // then
         Assert.assertEquals(1, foundEmployees.size());

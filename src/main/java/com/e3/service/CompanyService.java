@@ -134,8 +134,13 @@ public class CompanyService {
         }
     }
 
+    /**
+     * Search employee by its fields.
+     * @param searchVal
+     * @return
+     */
     public List<Employee> searchEmployee(String searchVal) {
-        return employeeRepository.findEmployeeByName(searchVal);
+        return employeeRepository.findEmployee(searchVal);
     }
 
 

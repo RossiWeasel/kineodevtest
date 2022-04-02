@@ -9,8 +9,9 @@ import java.util.List;
 public interface IEmployeeRepository extends JpaRepository<Employee, Long> {
     @Query("SELECT employee FROM Employee employee " +
            "WHERE employee.firstName LIKE %?1% " +
-                 "OR employee.lastName LIKE %?1%")
-    public List<Employee> findEmployeeByName(String name);
+                 "OR employee.lastName LIKE %?1% " +
+                 "OR CAST(company.id As string) LIKE %?1% ")
+    public List<Employee> findEmployee(String searchVal);
 
     @Query("SELECT employee FROM Employee employee INNER JOIN employee.company company " +
            "WHERE CAST(company.id As string) LIKE %?1% " +
